@@ -1,5 +1,10 @@
 {
+  "type": "commonjs",
   "devDependencies": {
     "@types/node": "^25.0.10"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.2.2",
+    "typedi": "^0.10.0"
   }
 }
