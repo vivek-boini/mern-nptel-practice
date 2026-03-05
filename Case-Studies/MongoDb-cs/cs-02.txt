@@ -1,0 +1,48 @@
+// 1. Add a new vegan dish "Tofu Buddha Bowl"
+
+db.dishes.insertOne({
+  name: "Tofu Buddha Bowl",
+  cuisine: "Asian",
+  price: {
+    value: 9.50,
+    currency: "USD"
+  },
+  tags: ["vegan", "gluten-free"],
+  available: true
+});
+
+
+// 2. Find all available vegan dishes under $12
+// Show only name and price fields using projection
+
+db.dishes.find(
+  {
+    available: true,
+    tags: "vegan",
+    "price.value": { $lt: 12 }
+  },
+  {
+    name: 1,
+    price: 1,
+    _id: 0
+  }
+);
+
+
+// 3. Update the price of "Tofu Buddha Bowl" to $10
+// Also add a new tag "popular"
+
+db.dishes.updateOne(
+  { name: "Tofu Buddha Bowl" },
+  {
+    $set: { "price.value": 10.00 },
+    $push: { tags: "popular" }
+  }
+);
+
+
+// 4. Delete the dish "Old Special Soup" from the menu
+
+db.dishes.deleteOne({
+  name: "Old Special Soup"
+});
