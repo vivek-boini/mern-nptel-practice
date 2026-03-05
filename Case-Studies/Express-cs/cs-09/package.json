@@ -1,0 +1,19 @@
+{
+  "name": "cs-09",
+  "version": "1.0.0",
+  "description": "This project demonstrates the **MVC pattern with Repository and Service layers** in Express to manage a library system.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
